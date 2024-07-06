@@ -1,0 +1,10 @@
+modelClass: App\Arrival\Models\Arrival
+
+form:
+    fields:
+        name:
+            label: Name
+            type: text
+        arrival_date:
+            label: Arrival Time
+            type: timepicker
