@@ -20,7 +20,7 @@ class Plugin extends PluginBase
     {
 
         return [
-            'app.arrival.some_permission' => [
+            'app.arrival.arrivals' => [
                 'tab' => 'Arrival',
                 'label' => 'Arrivals'
             ],

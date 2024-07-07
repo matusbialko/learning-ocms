@@ -5,6 +5,6 @@ use Model;
 class Arrival extends Model
 {
     public $table = 'app_arrival_arrivals';
-    protected $fillable = ['name', 'arrival_date'];
+    protected $fillable = ['name', 'arrived_at'];
 }
 ?>

@@ -1,0 +1,7 @@
+fields:
+    name:
+        label: Name
+        type: text
+    arrived_at:
+        label: Arrival Time
+        type: timepicker

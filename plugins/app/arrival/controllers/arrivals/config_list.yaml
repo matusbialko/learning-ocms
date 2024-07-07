@@ -1,13 +1,3 @@
 modelClass: App\Arrival\Models\Arrival
 
-list:
-    columns:
-        id:
-            label: ID
-            sortable: true
-        name:
-            label: Name
-        arrived_at:
-            label: Arrival Time
-        is_late:
-            label: Is Late
+list: $/app/arrival/models/arrival/columns.yaml
