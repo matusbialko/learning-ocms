@@ -2,13 +2,13 @@ columns:
     id:
         label: ID
         sortable: true
-        type: integer
+        type: number
     name:
         label: Name
-        type: string
+        type: text
     arrived_at:
         label: Arrival Time
-        type: timestamp 
+        type: datetime 
     is_late:
         label: Is Late
-        type: boolean
+        type: number
