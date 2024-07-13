@@ -6,5 +6,6 @@ class Arrival extends Model
 {
     public $table = 'app_arrival_arrivals';
     protected $fillable = ['name', 'arrived_at'];
+    public $timestamps = false;
 }
 ?>
