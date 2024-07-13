@@ -1,8 +1,7 @@
 <?php
-use Illuminate\Support\Facades\Route;
+use App\Arrival\Models\Arrival;
 
-Route::group(['prefix' => 'api'], function () {
-    Route::post('/arrivals', 'App\Arrival\Controllers\Api\Api@store');
-    Route::get('/arrivals', 'App\Arrival\Controllers\Api\Api@index');
+Route::get('/', function() {
+    return Arrival::get();
 });
 ?>
