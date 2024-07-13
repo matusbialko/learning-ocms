@@ -1,7 +1,7 @@
 <?php
 use App\Arrival\Models\Arrival;
 
-Route::get('/', function() {
+Route::get('api/arrivals', function() {
     return Arrival::get();
 });
 ?>
