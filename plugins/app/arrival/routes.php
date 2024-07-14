@@ -11,7 +11,8 @@ Route::group(['prefix' => 'api'], function () {
         if (!isset($_POST['name'])) die('Name is missing');
 
         $arrived_at = new DateTime();
-        $is_late = $arrived_at->format('H') >= 8;
+        $arrival = new Arrival;
+        $is_late = $arrival->isLate();
         return Arrival::create([
             'id' => rand(0, 1000),
             'name' => $_POST['name'],
