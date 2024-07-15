@@ -1,9 +1,6 @@
-<?php namespace App\IsLate;
+<?php namespace App\Islate;
 
-use Backend;
-use DateTime;
 use System\Classes\PluginBase;
-use App\Arrival\Models\Arrival;
 
 class Plugin extends PluginBase
 {
@@ -16,16 +13,6 @@ class Plugin extends PluginBase
             'author'      => 'Me :D',
             'icon'        => 'icon-clock'
         ];
-    }
-
-    public function boot()
-    {
-        Arrival::extend(function($model) {
-            $model->addDynamicMethod('isLate', function() {
-                $current_time = new DateTime();
-                return $current_time->format('H') >= 8;
-            });
-        });
     }
 }
 ?>
