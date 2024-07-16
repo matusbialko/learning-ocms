@@ -1,8 +1,6 @@
 <?php namespace App\Arrival\Models;
 
 use Model;
-use DateTime;
-use Log;
 
 class Arrival extends Model
 {
@@ -14,15 +12,18 @@ class Arrival extends Model
     public $table = 'app_arrival_arrivals';
     protected $fillable = [
         'name',
-        'arrived_at', 
-        'is_late'
+        'arrived_at'
     ];
     public $timestamps = false;
 
-    public function afterCreate()
+    public function getIsLateAttribute()
     {
-        $this->arrived_at = new DateTime();
-        Log::info('Creating arrival entry');
+        return now()->format('H') >= 8;
+    }
+
+    public function beforeCreate()
+    {
+        $this->arrived_at = now();
     }
 }
 ?>

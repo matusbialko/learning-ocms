@@ -12,7 +12,6 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamp('arrived_at');
-            $table->boolean('is_late');
             $table->timestamps();
         });
     }
