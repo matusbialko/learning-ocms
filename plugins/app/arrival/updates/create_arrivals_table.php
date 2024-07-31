@@ -10,6 +10,7 @@ class CreatePostsTable extends Migration
         Schema::create('app_arrival_arrivals', function($table)
         {
             $table->increments('id');
+            $table->increments('user_id');
             $table->string('name');
             $table->timestamp('arrived_at');
             $table->timestamps();

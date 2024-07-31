@@ -15,6 +15,9 @@ class Arrival extends Model
         'arrived_at'
     ];
     public $timestamps = false;
+    public $belongsTo = [
+        'user' => ['RainLab\User\Models\User']
+    ];
 
     public function getIsLateAttribute()
     {
