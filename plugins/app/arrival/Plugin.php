@@ -2,10 +2,17 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use RainLab\User\Models\User;
 
 class Plugin extends PluginBase
 {
 
+    public function boot()
+    {
+        User::extend(function($model){
+            $model->hasMany['arrival'] = ['App\Arrival\Models\Arrival'];
+        });
+    }
     public function pluginDetails()
     {
         return [

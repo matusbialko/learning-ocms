@@ -1,6 +1,6 @@
 <?php namespace App\Arrival\Http\Controllers;
 
-use Backend\Classes\Controller;
+use Illuminate\Routing\Controller;
 use App\Arrival\Models\Arrival;
 use App\Arrival\Http\Resources\ArrivalResource;
 use Input;
@@ -19,14 +19,14 @@ class ArrivalController extends Controller
         return Response::json($arrival, 201);
     }
 
-    public function getArrivals()
+    public function index()
     {
         return Response::json(Arrival::all(), 200);
     }
-    public function postArrival()
+    public function store()
     {
         $data = request()->all();
-        $arrival = new ArrivalResource($data);
-        return Response::json($arrival, 201);
+        $arrival = new Arrival($data);
+        return Response::json(new ArrivalResource($arrival), 201);
     }
 }

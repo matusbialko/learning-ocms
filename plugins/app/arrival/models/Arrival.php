@@ -17,9 +17,6 @@ class Arrival extends Model
     public $belongsTo = [
         'user' => ['RainLab\User\Models\User']
     ];
-    public $hasMany = [
-        'arrivals' => ['App\Arrival\Controllers\Arrivals']
-    ];
 
     public function getIsLateAttribute()
     {
