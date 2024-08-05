@@ -26,7 +26,7 @@ class ArrivalController extends Controller
     public function store()
     {
         $data = request()->all();
-        $arrival = new Arrival($data);
+        $arrival = Arrival::create($data);
         return Response::json(new ArrivalResource($arrival), 201);
     }
 }
