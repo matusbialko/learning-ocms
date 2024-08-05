@@ -4,9 +4,9 @@ columns:
         sortable: true
         type: number
     user_id:
-        label: User ID
+        label: User name
         sortable: true
-        type: number
+        type: text
     name:
         label: Name
         type: text
@@ -15,4 +15,4 @@ columns:
         type: datetime 
     is_late:
         label: Is Late
-        type: number
+        type: switch
