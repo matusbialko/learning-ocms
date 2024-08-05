@@ -18,6 +18,11 @@ class Arrival extends Model
         'user' => ['RainLab\User\Models\User']
     ];
 
+    public function getIsLateAttribute()
+    {
+        return $this->arrived_at->format('H') >= 8;
+    }
+
     public function beforeCreate()
     {
         $this->arrived_at = now();
