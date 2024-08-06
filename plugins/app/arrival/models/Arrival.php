@@ -14,6 +14,8 @@ class Arrival extends Model
 
     protected $fillable = [
         'name',
+        'user_id',
+        'user_name',
         'arrived_at'
     ];
 
