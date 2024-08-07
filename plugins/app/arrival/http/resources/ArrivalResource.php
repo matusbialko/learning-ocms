@@ -8,7 +8,6 @@
             return [
                 "id" => $this->id,
                 "user_id" => $this->user_id,
-                "user_name" => $this->user_name,
                 "name" => $this->name,
                 "arrived_at" => date($this->arrived_at)
             ];

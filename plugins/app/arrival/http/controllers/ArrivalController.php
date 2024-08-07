@@ -17,8 +17,8 @@ class ArrivalController extends Controller
     {
         $data = request()->all();
         $user = auth()->user();
-        $data['user_id'] = $user->id;
-        $data['user_name'] = $user->name;
+        $data['name'] = $user->name;
+        $data['user'] = $user;
         $arrival = Arrival::create($data);
         return Response::json(new ArrivalResource($arrival), 201);
     }

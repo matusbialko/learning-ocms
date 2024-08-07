@@ -3,10 +3,6 @@ columns:
         label: ID
         sortable: true
         type: number
-    user_name:
-        label: User name
-        sortable: true
-        type: text
     name:
         label: Name
         type: text
