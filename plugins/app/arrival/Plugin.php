@@ -3,6 +3,7 @@
 use Backend;
 use System\Classes\PluginBase;
 use RainLab\User\Models\User;
+use Event;
 
 class Plugin extends PluginBase
 {
@@ -11,6 +12,10 @@ class Plugin extends PluginBase
     {
         User::extend(function($model){
             $model->hasMany['arrival'] = ['App\Arrival\Models\Arrival'];
+        });
+
+        Event::listen('app.arrival.returnResponse', function(&$response) {
+            return $response;
         });
     }
     public function pluginDetails()
