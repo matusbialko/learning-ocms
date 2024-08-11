@@ -13,12 +13,9 @@ class ArrivalController extends Controller
     public function index()
     {
         $user = auth()->user();
-        if ($user->id) {
-            return Arrival::where('user_id', $user->id)->get();
-        } else {
-            $response = Response::json(Arrival::all(), 200);
-            return Event::fire('app.arrival.returnResponse', [$response]);
-        }
+        Event::fire('app.arrival.logUser', [$user]);
+        $arrivals = Arrival::where('user_id', auth()->user()->id)->get();
+        return ArrivalResource::collection($arrivals);
     }
     public function store()
     {

@@ -4,6 +4,7 @@ use Backend;
 use System\Classes\PluginBase;
 use RainLab\User\Models\User;
 use Event;
+use Log;
 
 class Plugin extends PluginBase
 {
@@ -14,8 +15,8 @@ class Plugin extends PluginBase
             $model->hasMany['arrival'] = ['App\Arrival\Models\Arrival'];
         });
 
-        Event::listen('app.arrival.returnResponse', function(&$response) {
-            return $response;
+        Event::listen('app.arrival.logUser', function(&$user) {
+            Log::info($user);
         });
     }
     public function pluginDetails()
