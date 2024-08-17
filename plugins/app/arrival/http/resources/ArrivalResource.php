@@ -9,7 +9,7 @@
                 "id" => $this->id,
                 "user_id" => $this->user_id,
                 "name" => $this->name,
-                "arrived_at" => date($this->arrived_at)
+                "arrived_at" => $this->arrived_at
             ];
         }
         
