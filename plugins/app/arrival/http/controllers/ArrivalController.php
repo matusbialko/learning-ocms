@@ -13,7 +13,7 @@ class ArrivalController extends Controller
 {
     public function index()
     {
-        $user = new UserResource(auth()->user());
+        $user = auth()->user();
         Event::fire('app.arrival.logUser', [$user]);
         $arrivals = Arrival::where('user_id', auth()->user()->id)->get();
         return ArrivalResource::collection($arrivals);
