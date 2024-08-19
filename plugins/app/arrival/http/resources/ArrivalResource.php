@@ -6,11 +6,9 @@
     class ArrivalResource extends JsonResource {
 
         public function toArray($request) {
-            $userObj = new UserResource($this->user);
             return [
                 "id" => $this->id,
-                "user" => $userObj,
-                "user_id" => $this->user_id,
+                "user" => new UserResource($this->user),
                 "name" => $this->name,
                 "arrived_at" => $this->arrived_at
             ];
